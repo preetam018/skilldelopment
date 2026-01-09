@@ -7,15 +7,13 @@ import os
 
 FILE_NAME = "students.txt"
 
-# ---------- Utility Functions ----------
-
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 def pause():
     input("\nPress Enter to continue...")
 
-# ---------- File Handling ----------
+
 
 def load_students():
     students = []
@@ -40,7 +38,7 @@ def save_students(students):
                 f"{s['id']},{s['name']},{s['class']},{s['attendance']},{s['marks']}\n"
             )
 
-# ---------- CRUD OPERATIONS ----------
+-
 
 def add_student(students):
     clear_screen()
@@ -53,7 +51,7 @@ def add_student(students):
     # Duplicate check
     for s in students:
         if s["id"] == sid:
-            print("\n❌ Student ID already exists")
+            print("\n Student ID already exists")
             pause()
             return
 
@@ -63,7 +61,7 @@ def add_student(students):
     marks = input("Marks             : ").strip()
 
     if not all([sid, name, sclass, attendance, marks]):
-        print("\n❌ All fields are mandatory")
+        print("\n All fields are mandatory")
         pause()
         return
 
@@ -76,7 +74,7 @@ def add_student(students):
     })
 
     save_students(students)
-    print("\n✅ Student added successfully")
+    print("\n Student added successfully")
     pause()
 
 def view_students(students):
@@ -128,16 +126,16 @@ def update_student(students):
                 s["attendance"] = input("New Attendance: ")
                 s["marks"] = input("New Marks: ")
             else:
-                print("\n❌ Invalid option")
+                print("\n Invalid option")
                 pause()
                 return
 
             save_students(students)
-            print("\n✅ Student record updated")
+            print("\n Student record updated")
             pause()
             return
 
-    print("\n❌ Student not found")
+    print("\n Student not found")
     pause()
 
 def delete_student(students):
@@ -152,11 +150,11 @@ def delete_student(students):
         if s["id"] == sid:
             students.remove(s)
             save_students(students)
-            print("\n✅ Student record deleted")
+            print("\n Student record deleted")
             pause()
             return
 
-    print("\n❌ Student not found")
+    print("\n Student not found")
     pause()
 
 def clear_all_students(students):
@@ -166,9 +164,9 @@ def clear_all_students(students):
     if confirm == "yes":
         students.clear()
         open(FILE_NAME, "w").close()
-        print("\n✅ All student records cleared")
+        print("\n All student records cleared")
     else:
-        print("\n❌ Operation cancelled")
+        print("\n Operation cancelled")
 
     pause()
 
@@ -204,11 +202,12 @@ def main():
             clear_all_students(students)
         elif choice == "5":
             clear_screen()
-            print("Thank you 🙏")
+            print("Thank you ")
             break
         else:
-            print("\n❌ Invalid choice")
+            print("\n Invalid choice")
             pause()
 
 # ---------- Program Start ----------
 main()
+

@@ -1,7 +1,3 @@
-# --------------------------------------------------
-# Student Management System
-# Console Based | File Handling | CRUD Operations
-# --------------------------------------------------
 
 import os
 
@@ -210,4 +206,5 @@ def main():
 
 # ---------- Program Start ----------
 main()
+
 
